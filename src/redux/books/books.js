@@ -1,14 +1,8 @@
+import { axios } from 'axios';
+
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
-
-const initialState = [];
-
-const nextBook = (books) => {
-  const maxId = books.reduce((maxId, book) => Math.max(book.id, maxId), -1);
-  return maxId + 1;
-};
-
-export const bookId = nextBook(initialState);
+const FETCH_BOOK = 'bookStore/books/FETCH_BOOK';
 
 // ACTIONS
 
@@ -22,18 +16,42 @@ export const removeBook = (payload) => ({
   payload,
 });
 
+export const fetchBook = (payload) => ({
+  type: FETCH_BOOK,
+  payload,
+});
+
+export const fetchBookAPI = () => async (dispatch) => {
+  try {
+    const { data } = await axios.get('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/hp71d2oEr2DCTS2XUoVz/books');
+
+    const books = Object.keys(data).map((key) => ({
+      ...data[key][0],
+      item_id: key,
+    }));
+
+    const payload = Object.values(books);
+    dispatch(fetchBook(payload));
+  } catch (error) {
+    return error;
+  }
+};
+
 // REDUCER
 
-const reducer = (state = initialState, action) => {
+const initialState = [];
+
+const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
-      console.log(nextBook(state));
       return [...state, action.payload];
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== bookId);
+      return state.filter((book) => book.id !== book.id);
+    case FETCH_BOOK:
+      return [...state, action.payload];
     default:
       return state;
   }
 };
 
-export default reducer;
+export default bookReducer;

@@ -2,3 +2,14 @@
   height: 50px;
   border: 1px solid grey;
 }
+
+.book {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+}
+
+.listEl {
+  padding-right: 10px;
+}

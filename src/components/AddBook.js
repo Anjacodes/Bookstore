@@ -1,13 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { addBook, bookId } from '../redux/books/books';
+import { addBook } from '../slices/bookSlice';
 
-function AddBook() {
+const AddBook = () => {
   const dispatch = useDispatch();
   const submitBookToStore = () => {
     const newBook = {
-      id: bookId,
+      id: 1,
       title: 'Der Schatten des Windes',
       author: 'Carlos Ruíz Zafón',
     };
@@ -24,6 +24,6 @@ function AddBook() {
       </form>
     </div>
   );
-}
+};
 
 export default AddBook;
