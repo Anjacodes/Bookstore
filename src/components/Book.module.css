@@ -1,0 +1,7 @@
+.book {
+  display: flex;
+}
+
+.bookEl {
+  padding-right: 10px;
+}

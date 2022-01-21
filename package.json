@@ -16,6 +16,7 @@
     "redux": "^4.1.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.1",
+    "uuid": "^8.3.2",
     "web-vitals": "^2.1.2"
   },
   "scripts": {
@@ -56,6 +57,7 @@
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
-    "stylelint-scss": "^3.21.0"
+    "stylelint-scss": "^3.21.0",
+    "uuid": "^8.3.2"
   }
 }

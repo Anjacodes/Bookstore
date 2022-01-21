@@ -1,26 +1,46 @@
-import React from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid'; /*eslint-disable-line*/
 
-import { addBook } from '../slices/bookSlice';
+import { addBookToAPI } from '../redux/books/books';
 
 const AddBook = () => {
   const dispatch = useDispatch();
-  const submitBookToStore = () => {
+  const [title, setTitle] = useState('');
+  const [category, setCategory] = useState('');
+
+  const submitBookToStore = (e) => {
+    e.preventDefault();
+    if (title === '' && category === '') return;
     const newBook = {
-      id: 1,
-      title: 'Der Schatten des Windes',
-      author: 'Carlos Ruíz Zafón',
+      item_id: uuidv4(),
+      title,
+      category,
     };
-    dispatch(addBook(newBook));
+    dispatch(addBookToAPI(newBook));
+    setTitle('');
+    setCategory('');
   };
 
   return (
     <div>
       <h2>ADD NEW BOOK</h2>
       <form>
-        <input type="text" placeholder="Book title" />
-        <input type="text" placeholder="Category" />
-        <button type="button" onClick={submitBookToStore}>Add Book</button>
+        <input
+          type="text"
+          placeholder="Book title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          required
+        />
+        <input
+          type="text"
+          placeholder="Category"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          required
+        />
+        <button type="submit" onClick={(e) => submitBookToStore(e)}>Add Book</button>
       </form>
     </div>
   );
