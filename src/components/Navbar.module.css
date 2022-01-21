@@ -2,21 +2,38 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px;
-  background-color: #e7e6e1;
-}
-
-.title {
-  font-size: 2rem;
+  padding: 20px 6.25rem;
+  font-family: 'Montserrat', sans-serif;
+  height: 5.938rem;
+  border-bottom: solid 1px #e8e8e8;
+  background-color: white;
 }
 
 .linkCont {
   display: flex;
+  align-items: center;
   list-style: none;
 }
 
+.user {
+  height: 2.813rem;
+  color: #0290ff;
+}
+
+.titleLink {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 1.875rem;
+  color: #0290ff;
+}
+
 .linkEl {
-  margin-left: 10px;
+  margin-left: 2rem;
+  color: #121212;
+  opacity: 50%;
+  letter-spacing: 1.9px;
+  font-size: 0.813rem;
 }
 
 .link {
