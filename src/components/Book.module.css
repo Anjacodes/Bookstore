@@ -72,6 +72,10 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.chapterCont {
+  margin-right: 6.25rem;
+}
+
 .current {
   opacity: 50%;
   font-size: 0.813rem;

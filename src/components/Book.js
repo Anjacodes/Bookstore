@@ -33,7 +33,7 @@ const Book = (book) => {
           <p className={styles.completed}>Completed</p>
         </div>
       </div>
-      <div>
+      <div className={styles.chapterCont}>
         <h4 className={styles.current}>CURRENT CHAPTER</h4>
         <h4 className={styles.chapter}>Chapter 7</h4>
         <button className={styles.btnProg} type="button">UPDATE PROGRESS</button>
