@@ -4,9 +4,9 @@
   background-color: white;
   border: solid 1px #e8e8e8;
   margin-bottom: 1.5rem;
-  padding-left: 1.688rem;
+  padding: 1.688rem;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .category {
@@ -50,6 +50,7 @@
 .progressCont {
   display: flex;
   align-items: center;
+  margin-left: 20%;
 }
 
 .margLeft {

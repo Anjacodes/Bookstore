@@ -1,6 +1,12 @@
 .formCont {
-  margin: 0 6.25rem 16.5rem 6.25rem;
+  padding: 0 6.25rem 16.5rem 6.25rem;
+  width: 100vw;
+}
+
+.form {
+  display: flex;
   width: 100%;
+  justify-content: space-between;
 }
 
 .title {
@@ -23,6 +29,7 @@
   margin-right: 2rem;
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
+  width: 30%;
 }
 
 .btn {

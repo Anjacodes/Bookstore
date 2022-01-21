@@ -26,7 +26,7 @@ const AddBook = () => {
   return (
     <div className={styles.formCont}>
       <h2 className={styles.title}>ADD NEW BOOK</h2>
-      <form>
+      <form className={styles.form}>
         <input
           type="text"
           placeholder="Book title"
