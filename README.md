@@ -9,7 +9,7 @@ The Bookstore website allows you to:
   <li>Remove a selected book.</li>
 </ul>
 
-<!-- <img width="710" alt="math magicians preview" src="/MathMagicians.png"> -->
+<img width="710" alt="bookstore preview" src="./src/images/Bookstore.png">
 
 <h2>🧩 Built With</h2>
 
@@ -18,11 +18,9 @@ Redux
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-<!-- <h2>Live Demo</h2>
+<h2>Live Demo</h2>
 
-<a href="https://vigilant-kowalevski-cde2c6.netlify.app/" rel="noopener noreferrer">Live Demo Link 1</a>
-
-<a href="https://mathmagicians-app.herokuapp.com/" rel="noopener noreferrer">Live Demo Link 2</a> -->
+<a href="https://affectionate-mirzakhani-76e566.netlify.app/" rel="noopener noreferrer">Live Demo Link</a>
 
 
 <h2>📚 Getting Started</h2>
