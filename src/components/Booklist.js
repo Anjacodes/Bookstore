@@ -1,23 +1,25 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { removeBook, bookId } from '../redux/books/books';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchBooksFromAPI } from '../redux/books/books';
 import styles from './Booklist.module.css';
+import Book from './Book';
 
-function Booklist() {
+const Booklist = () => {
+  const books = useSelector((state) => state.books);
+
   const dispatch = useDispatch();
-  const removeBookFromStore = () => {
-    dispatch(removeBook({
-      id: bookId,
-      title: 'Der Schatten des Windes',
-      author: 'Carlos Ruíz Zafón',
-    }));
-  };
+
+  useEffect(() => {
+    dispatch(fetchBooksFromAPI());
+  }, []);
+
+  const content = books.map((book) => (<Book unit={book} key={book.item_id} />));
 
   return (
     <div className={styles.bookContainer}>
-      <button type="button" onClick={removeBookFromStore}>Remove</button>
+      {content}
     </div>
   );
-}
+};
 
 export default Booklist;
