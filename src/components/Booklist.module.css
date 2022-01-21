@@ -1,5 +1,11 @@
 .bookContainer {
-  border: 1px solid grey;
-  margin: 20px 50px;
-  padding-left: 15px;
+  margin: 3rem 6.25rem;
+  background-color: #f5f6fa;
+}
+
+.separator {
+  height: 1px;
+  border: none;
+  background-color: #e8e8e8;
+  margin: 2.5rem 0;
 }

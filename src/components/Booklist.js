@@ -18,6 +18,7 @@ const Booklist = () => {
   return (
     <div className={styles.bookContainer}>
       {content}
+      <hr className={styles.separator} />
     </div>
   );
 };

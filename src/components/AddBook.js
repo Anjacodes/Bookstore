@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid'; /*eslint-disable-line*/
 
 import { addBookToAPI } from '../redux/books/books';
+import styles from './AddBook.module.css';
 
 const AddBook = () => {
   const dispatch = useDispatch();
@@ -23,14 +24,15 @@ const AddBook = () => {
   };
 
   return (
-    <div>
-      <h2>ADD NEW BOOK</h2>
-      <form>
+    <div className={styles.formCont}>
+      <h2 className={styles.title}>ADD NEW BOOK</h2>
+      <form className={styles.form}>
         <input
           type="text"
           placeholder="Book title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          className={styles.bookTitle}
           required
         />
         <input
@@ -38,9 +40,10 @@ const AddBook = () => {
           placeholder="Category"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
+          className={styles.category}
           required
         />
-        <button type="submit" onClick={(e) => submitBookToStore(e)}>Add Book</button>
+        <button className={styles.btn} type="submit" onClick={(e) => submitBookToStore(e)}>ADD BOOK</button>
       </form>
     </div>
   );

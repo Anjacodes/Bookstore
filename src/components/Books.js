@@ -7,7 +7,6 @@ import AddBook from './AddBook';
 function Books() {
   return (
     <div>
-      <h2>Books</h2>
       <Booklist />
       <AddBook />
     </div>
